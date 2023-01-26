@@ -45,6 +45,9 @@ echo $testvar_s2
 # 获取字符串长度
 echo ${#testvar_s2} # 输出14
 
-# 数组与切片
+# 数组与切片（不完全是切片）
 echo ${#testvar_s2[2]} # 0
 echo ${testvar_s2:1:5} # xn lo  一个切片
+
+# 注意：shell中一切变量都是字符串类型，不可以直接进行加减运算。
+# 其实这样的设计是有好处的，详情见 ./practice/run.sh
