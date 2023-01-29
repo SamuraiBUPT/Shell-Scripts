@@ -38,8 +38,5 @@ echo ""
 echo "Server mods list:"
 ls -1 ./mods
 
-if [[ ! -d "/logs" ]]; then
-    mkdir logs
-fi
-
+# gather server error logs
 # java -server -Xms${min_RAM}G -Xmx${max_RAM}G -jar -XX:+UseG1GC mohist-1.16.5-1096-server.jar --nogui
