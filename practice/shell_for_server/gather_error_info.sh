@@ -27,16 +27,17 @@ for fileName in $(echo $(ls $LOGS_PATH)); do
 done
 
 for file in $(cat log_list.txt); do
-    unzip $LOGS_PATH/$file
+    unzip -d $(dirname $0) $LOGS_PATH/$file
     log_name=$(ls $(dirname $0))
     log_name=$(echo $log_name)
     log_name=($log_name)
     log_name=${log_name[0]}
+    echo "LOG_NAME is : ${log_name}"
 
     # find ERROR INFO
     touch ERROR_INFO.txt
-    grep ERROR $log_name >>ERROR_INFO.txt
-    rm $log_name
+    grep ERROR $script_path/$log_name >>ERROR_INFO.txt
+    rm $script_path/$log_name
 done
 
 rm log_list.txt
