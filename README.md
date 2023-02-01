@@ -82,3 +82,33 @@ whereamii=$(
 
 ## 传入下一条command
 `java -version 2>&1 | sed 1!d`
+
+# Code Experience
+记得在调试脚本的时候，要在根目录进行调试，
+
+**因为很多命令都是会在脚本执行时环境进行io操作的**，
+
+如果仅仅是在脚本当前环境进行调试，可能会导致脚本无法运行/io失败。
+
+在写脚本的时候，一定要在前面把script_path写好，便于后面运用。
+
+`script_path`：脚本所处的环境
+
+```
+script_path=$(
+    cd $(dirname $0)
+    pwd
+)
+```
+
+`upper_script_path`：脚本所处的环境
+
+```
+upper_script_path=$(
+    cd $(dirname $0)
+    cd ..
+    pwd
+)
+```
+
+`dirname $0`是**脚本所处位置**和**执行脚本的位置**之间的相对路径，用好`$(dirname $0)`是用好shell的基础
