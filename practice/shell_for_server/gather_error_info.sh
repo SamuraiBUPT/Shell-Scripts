@@ -1,7 +1,18 @@
 #!/bin/bash
 
 # Set 'logs' directory path
-LOGS_PATH="../logs/"
+script_path=$(
+    cd $(dirname $0)
+    pwd
+)
+
+script_upper_PATH=$(
+    cd $(dirname $0)
+    cd ..
+    pwd
+)
+
+LOGS_PATH=$script_upper_PATH/logs
 
 # Get yesterday date, which helps grep certain logs
 yesterday=$(date -d yesterday +%Y%m%d)
@@ -33,3 +44,5 @@ rm log_list.txt
 cat ERROR_INFO.txt | heirloom-mailx -s "Error ${yesterday}" -t d31409163@163.com
 
 rm ERROR_INFO.txt
+
+# 0 12 * * * bash /opt/mcsmanager/daemon/data/InstanceData/0ceada06487e44cea1c3960c2909088f/shell_for_server/gather_error_info.sh
