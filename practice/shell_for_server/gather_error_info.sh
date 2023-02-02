@@ -36,7 +36,7 @@ for file in $(cat log_list.txt); do
 
     # find ERROR INFO
     touch ERROR_INFO.txt
-    grep ERROR $script_path/$log_name >>ERROR_INFO.txt
+    grep ERROR $script_path/$log_name >>ERROR_INFO.txt # grep直接定位所在的那一行
     rm $script_path/$log_name
 done
 
