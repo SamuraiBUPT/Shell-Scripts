@@ -23,11 +23,8 @@ rm -rf Visualization-Flask
 
 # upload & unzip
 rz
-sleep 20s
+sleep 15s
 unzip Flask.zip
-sleep 5s
+sleep 10s
 
-# restart
-cd Visualization-Flask
-screen -S Flask
-python3 app.py
+echo "已完成配置，请cd至/python_project/flask_for_segment/Visualization-Flask，并通过新建Flask screen开启项目"
