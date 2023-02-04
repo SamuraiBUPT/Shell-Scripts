@@ -14,17 +14,21 @@ script_path=$(
 )
 
 # stop screen
+echo "screen named 'Flask' is stopping..."
 screen -S Flask -X quit
 sleep 3s
 
 # clean old version
+echo "cleaning old files..."
 rm Flask.zip
 rm -rf Visualization-Flask
 
 # upload & unzip
+echo "Please upload Flask.zip"
 rz
 sleep 15s
+echo "unzipping..."
 unzip Flask.zip
 sleep 10s
 
-echo "已完成配置，请cd至/python_project/flask_for_segment/Visualization-Flask，并通过新建Flask screen开启项目"
+echo "已完成配置，请cd至/python_project/flask_for_segment/Visualization-Flask，并新建一个名为Flask的新screen。"
