@@ -42,7 +42,7 @@ done
 
 rm log_list.txt
 
-cat ERROR_INFO.txt | heirloom-mailx -s "Error ${yesterday}" -t d31409163@163.com
+echo "这是${yesterday}的错误报告，请查收。" | heirloom-mailx -s "Error ${yesterday}" -a ERROR_INFO.txt -t d31409163@163.com
 
 rm ERROR_INFO.txt
 
