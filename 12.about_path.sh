@@ -7,10 +7,11 @@ script_path=$(
     cd $(dirname $0)
     pwd
 )
+echo $script_path
 
 # 当前路径
 current_path=$(pwd)
-echo $current_path
+echo "pwd:"$current_path
 
 # 会随之cd吗？
 echo $(pwd) # 注意：实际上在外部作用域没有cd，只是在script_path里面进行了cd操作
