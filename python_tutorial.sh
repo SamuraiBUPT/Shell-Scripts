@@ -39,3 +39,5 @@ echo ""
 echo ""
 echo "input : 'conda install pytorch torchvision torchaudio cpuonly -c pytorch' "
 echo ""
+
+echo "test."
