@@ -15,13 +15,17 @@ script_path=$(
 
 # stop screen
 echo "screen named 'Flask' is stopping..."
+echo ""
 screen -S Flask -X quit
 sleep 3s
 
 # clean old version
 echo "cleaning old files..."
 rm Flask.zip
-rm -rf Visualization-Flask
+rm -rf Flask
+echo ""
+echo "clean finished."
+echo ""
 
 # upload & unzip
 echo "Please upload Flask.zip"
