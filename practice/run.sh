@@ -14,6 +14,8 @@ echo ""
 min_RAM=2
 max_RAM=8
 
+#
+
 server_require_jdk="17.0.1"
 
 javaVersion=
